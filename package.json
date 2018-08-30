@@ -1,0 +1,18 @@
+{
+  "name": "mtbva-ghost",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "ghost": "^2.0.3",
+    "ghost-storage-adapter-s3": "^2.5.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "postinstall": "cp -r ./node_modules/ghost-storage-adapter-s3 ./content/adapters/storage/s3",
+    "dev": "NODE_ENV=development node ./index.js",
+    "server": "NODE_ENV=production node ./index.js"
+  },
+  "author": "",
+  "license": "ISC"
+}
