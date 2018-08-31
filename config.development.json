@@ -1,0 +1,42 @@
+{
+  "url": "http://localhost:2368",
+  "database": {
+    "client": "sqlite3",
+    "connection": {
+      "filename": "content/data/ghost.db"
+    },
+    "debug": false
+  },
+  "auth": {
+    "type": "password"
+  },
+  "paths": {
+    "contentPath": "content/"
+  },
+  "privacy": {
+    "useRpcPing": false,
+    "useUpdateCheck": true
+  },
+  "useMinFiles": false,
+  "caching": {
+    "theme": {
+      "maxAge": 0
+    },
+    "admin": {
+      "maxAge": 0
+    }
+  },
+  "mail": {
+    "from": "signup@bikeva.com",
+    "transport": "SMTP",
+    "options": {
+      "host": "email-smtp.us-east-1.amazonaws.com",
+      "port": 465,
+      "service": "SES",
+      "auth": {
+        "user": "AKIAJEUPPSTBOYQYCJ6Q",
+        "pass": "AnOhPnY67mPtkaupksorSFXEV6azVbNRtmAMBbBDd6Z2"
+      }
+    }
+  }
+}

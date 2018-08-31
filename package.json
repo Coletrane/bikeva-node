@@ -9,7 +9,6 @@
   },
   "devDependencies": {},
   "scripts": {
-    "postinstall": "cp -r ./node_modules/ghost-storage-adapter-s3 ./content/adapters/storage/s3",
     "dev": "NODE_ENV=development node ./index.js",
     "server": "NODE_ENV=production node ./index.js"
   },
