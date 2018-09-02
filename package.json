@@ -7,7 +7,9 @@
     "ghost": "^2.0.3",
     "ghost-storage-adapter-s3": "^2.5.2"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "axios": "^0.18.0"
+  },
   "scripts": {
     "dev": "NODE_ENV=development node ./index.js",
     "server": "NODE_ENV=production node ./index.js"

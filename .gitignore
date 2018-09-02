@@ -72,7 +72,4 @@ typings/
 # Serverless directories
 .serverless
 
-config.production.json
-config.development.json
-content
 .idea
