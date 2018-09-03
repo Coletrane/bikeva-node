@@ -1,10 +1,26 @@
-
-const sqlite3 = require('sqlite3')
+const router = require("express").Router()
+const sqlite3 = require("sqlite3")
 const db = new sqlite3.Database("./content/data/ghost.db")
 
+router.get("/:name", (req, res) => {
+  // TODO: add logger
+  console.log(`Querying databse for race: ${req.params.name}`)
+  db.all(`SELECT * FROM results WHERE name = '${req.params.name}'`,
+    (err, data) => {
+      if (err) {
+        res.status(500).send(err)
+      }
 
-module.exports = {
-  endpoint: "/results/:name",
+      if (!data) {
+        res.status(404).send()
+      } else if (data.length > 1) {
+        res.status(500).send("Duplicate race names")
+      } else {
+        console.log(`Results found! ${req.params.name}`)
+        res.setHeader("Content-Type", "application/json")
+        res.send(data[0].json)
+      }
+    })
+})
 
-}
-
+module.exports = router
