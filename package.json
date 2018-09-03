@@ -13,8 +13,8 @@
     "prettier": "^1.14.2"
   },
   "scripts": {
-    "dev": "NODE_ENV=development node ./index.js",
-    "server": "NODE_ENV=production node ./index.js"
+    "dev": "NODE_ENV=development node ./server.js",
+    "server": "NODE_ENV=production node ./server.js"
   },
   "author": "",
   "license": "ISC"
