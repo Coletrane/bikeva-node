@@ -8,9 +8,18 @@ $(function ($) {
       $.ajax(url + "api/results/" + $("#race-select").val())
         .then(function (res) {
           var table = $("table")
-          var thead = $("thead")
-          var tbody = $("tbody")
 
+          var thead = $("thead")
+          thead.append(
+            $("th").text("position"),
+            $("th").text("name"),
+            $("th").text("time")
+          )
+
+          var tbody = $("tbody")
+          res.classes.forEach(function(clazz) {
+            $()
+          })
           $("#race-table").append(table)
         })
         .catch(function (err) {
