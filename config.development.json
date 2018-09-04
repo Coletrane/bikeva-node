@@ -1,12 +1,5 @@
 {
   "url": "http://localhost:2368",
-  "database": {
-    "client": "sqlite3",
-    "connection": {
-      "filename": "content/data/ghost.db"
-    },
-    "debug": false
-  },
   "auth": {
     "type": "password"
   },
@@ -24,6 +17,26 @@
     },
     "admin": {
       "maxAge": 0
+    }
+  },
+  "database": {
+    "client": "mysql",
+    "connection": {
+      "host": "ec2-18-212-57-223.compute-1.amazonaws.com",
+      "port": 3306,
+      "user": "root",
+      "password": "sK84life",
+      "database": "mtbva"
+    }
+  },
+  "storage": {
+    "active": "s3",
+    "s3": {
+      "accessKeyId": "AKIAIE7DN5NLV4NM7GTA",
+      "secretAccessKey": "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",
+      "region": "us-east-1",
+      "bucket": "mtbva-ghost",
+      "assetHost": "https://d67lpjl1ad6mv.cloudfront.net"
     }
   },
   "mail": {
