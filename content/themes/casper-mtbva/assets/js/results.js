@@ -18,7 +18,11 @@ $(function ($) {
 
           var tbody = $("tbody")
           res.classes.forEach(function(clazz) {
-            $()
+
+            tbody.append(
+              $("td").text(i + 1)
+
+            )
           })
           $("#race-table").append(table)
         })

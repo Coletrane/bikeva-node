@@ -75,3 +75,4 @@ typings/
 .idea
 .DS_Store
 content/images
+content/db
