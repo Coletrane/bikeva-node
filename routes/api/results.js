@@ -1,7 +1,13 @@
 const router = require("express").Router()
-const sqlite3 = require("sqlite3")
-const db = new sqlite3.Database("./content/data/ghost.db")
+const mysql = require("mysql")
+let config = require("../../config.development")
+if (process.env.NODE_ENV === "production") {
+  config = require("../../config.production")
+}
 
+const conn = mysql.createConnection({
+
+})
 router.get("/:name", (req, res) => {
   // TODO: add logger
   console.log(`Querying databse for race: ${req.params.name}`)
