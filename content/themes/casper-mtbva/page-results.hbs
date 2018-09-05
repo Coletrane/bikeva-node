@@ -7,14 +7,7 @@ into the {body} of the default.hbs template --}}
 {{!-- The main content area --}}
 <main id="site-main" class="site-main outer">
   <div class="inner">
-    <label for="race-select">
-      Race:
-    </label>
-    <select id="race-select">
-      <option value="middle-mountain-momma-2018">
-        Middle Mountain Momma 2018
-      </option>
-    </select>
+    {{> "results/race-select"}}
     <div id="mtbva-results">
       {{> "results/middle-mountain-momma-2018"}}
     </div>

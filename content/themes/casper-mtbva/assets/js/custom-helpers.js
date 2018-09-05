@@ -1,11 +1,5 @@
 $(function($) {
   function getResults() {
-    if (!window.mtbvaResults) {
-      window.mtbvaResults = {
-        "middle-mountain-momma-2018": true
-      }
-    }
-
     if (!window.mtbvaResults[$("#race-select").val()]) {
       var url = window.location.href.replace("/results", "")
       $.ajax(url + "api/results/" + $("#race-select").val())
@@ -35,17 +29,26 @@ $(function($) {
             results.append(table)
           })
           $("#mtbva-results").append(results)
+          window.mtbvaResults[$("#race-select").val()] = results
         })
-        .catch(function(err) {
+        // .catch(function(err) {
           // TODO: sentry
-          console.log(err)
-        })
+        // })
     } else {
-      return window.mtbvaResults[$("#race-select").val()]
+      $("#mtbva-results").append(window.mtbvaResults[$("#race-select").val()])
     }
   }
 
-  if (window.location.href.indexOf("results") !== -1) {
+  window.mtbvaResults = {
+    "middle-mountain-momma-2018": $("#mtbva-results div:first")
+  }
+
+  $("#race-select").on("change", function() {
+    $("#mtbva-results div:first").remove()
+    getResults()
+  })
+
+  if (window.location.href.indexOf("/results") !== -1) {
     getResults()
   }
 })
