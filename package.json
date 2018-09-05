@@ -15,7 +15,7 @@
   },
   "scripts": {
     "dev": "NODE_ENV=development node ./server.js",
-    "server": "NODE_ENV=production node ./server.js",
+    "start": "NODE_ENV=production node ./server.js",
     "postinstall": "echo 'TODO: https://github.com/TryGhost/Ghost/issues/8754mkdir` ./node_modules/ghost/core/server/adapters/storage/s3 && cp -r ./node_modules/ghost-storage-adapter-s3/* ./node_modules/ghost/core/server/adapters/storage/s3"
   },
   "author": "",
