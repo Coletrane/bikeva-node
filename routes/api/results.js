@@ -1,25 +1,14 @@
 const router = require("express").Router()
-const mysql = require("mysql")
-
-let config = require("../../config.development")
-if (process.env.NODE_ENV === "production") {
-  config = require("../../config.production")
-}
-
-const conn = mysql.createConnection({
-  host: config.database.connection.host,
-  user: config.database.connection.user,
-  password: config.database.connection.password,
-  database: config.database.connection.database
-})
-conn.connect()
+const db = require("../../server").db
 
 router.get("/:name", (req, res) => {
   // TODO: add logger
-  console.log(`Querying databse for race: ${req.params.name}`)
-  conn.query(`SELECT * FROM results WHERE name = '${req.params.name}'`,
+  console.info(`Querying databse for race: ${req.params.name}`)
+  db.query(
+    `SELECT * FROM results WHERE name = '${req.params.name}'`,
     (err, results, fields) => {
       if (err) {
+        console.error(err)
         res.status(500).send(err)
       }
 
@@ -32,7 +21,8 @@ router.get("/:name", (req, res) => {
         res.setHeader("Content-Type", "application/json")
         res.send(results[0].json)
       }
-    })
+    }
+  )
 })
 
 module.exports = router
