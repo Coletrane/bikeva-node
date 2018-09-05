@@ -5,7 +5,7 @@
   "main": "index.js",
   "dependencies": {
     "express": "^4.16.3",
-    "ghost": "^2.0.3",
+    "ghost": "2.0.3",
     "ghost-storage-adapter-s3": "^2.5.2",
     "mysql": "^2.16.0"
   },
@@ -16,8 +16,11 @@
   "scripts": {
     "dev": "NODE_ENV=development node ./server.js",
     "start": "NODE_ENV=production node ./server.js",
-    "postinstall": "echo 'TODO: https://github.com/TryGhost/Ghost/issues/8754mkdir` && ./node_modules/ghost/core/server/adapters/storage/s3 && cp -r ./node_modules/ghost-storage-adapter-s3/* ./node_modules/ghost/core/server/adapters/storage/s3"
+    "postinstall": "echo 'TODO: https://github.com/TryGhost/Ghost/issues/8754' && mkdir ./node_modules/ghost/core/server/adapters/storage/s3 && cp -r ./node_modules/ghost-storage-adapter-s3/* ./node_modules/ghost/core/server/adapters/storage/s3"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "prettier": {
+    "semi": false
+  }
 }
