@@ -194,28 +194,22 @@ body {
 /* ---------------------------------------------------------- */
 
 .site-nav {
-    position: relative;
+    position: fixed;
+    width: 100%;
     z-index: 300;
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
     overflow-y: hidden;
-    height: 40px;
+    height: 60px;
     font-size: 1.2rem;
+    background-color: rgba(0,0,0, 0.8);
 }
 
 .site-nav-left {
     display: flex;
     align-items: center;
-    overflow-x: auto;
     overflow-y: hidden;
-    -webkit-overflow-scrolling: touch;
-    margin-right: 10px;
-    padding-bottom: 80px;
-    letter-spacing: 0.4px;
-    white-space: nowrap;
-
-    -ms-overflow-scrolling: touch;
 }
 
 /* Site Nav Hack Explanation (above):
@@ -229,8 +223,8 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
 .site-nav-logo {
     flex-shrink: 0;
     display: block;
-    margin-right: 24px;
-    padding: 11px 0;
+    margin-left: 24px;
+    padding: 6px 0;
     color: #fff;
     font-size: 1.7rem;
     line-height: 1em;
@@ -245,7 +239,11 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
 .site-nav-logo img {
     display: block;
     width: auto;
-    height: 21px;
+    height: 48px;
+}
+
+.xxc-va-logo img {
+    height: 40px;
 }
 
 .nav {
@@ -279,7 +277,7 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
     flex-shrink: 0;
     display: flex;
     align-items: center;
-    height: 40px;
+    height: 60px;
 }
 
 .social-links {
@@ -1635,7 +1633,7 @@ Usage (In Ghost editor):
     align-items: center;
     height: 60px;
     border-bottom: rgba(0,0,0,0.06) 1px solid;
-    background: rgba(255,255,255,0.95);
+    background: rgba(255,255,255, 1);
     transition: all 500ms cubic-bezier(0.19, 1, 0.22, 1);
     transform: translate3d(0, -120%, 0);
 }
@@ -1793,7 +1791,7 @@ Usage (In Ghost editor):
 
 @media (max-width: 900px) {
     .floating-header {
-        height: 40px;
+        height: 60px;
     }
     .floating-header-title,
     .floating-header-logo {
@@ -1802,7 +1800,7 @@ Usage (In Ghost editor):
     .floating-header-share-tw,
     .floating-header-share-fb {
         width: 40px;
-        height: 40px;
+        height: 60px;
         line-height: 38px;
     }
 }
