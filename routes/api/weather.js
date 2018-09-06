@@ -20,21 +20,21 @@ const getOrUpdateWeather = async (results, res) => {
   let weather = {}
   for (const result of results) {
     if (
-      moment(result.last_updated)
+      moment()
         .utc()
-        .diff(moment().utc(), "minutes") > 15
+        .diff(moment(result.last_updated).utc(), "minutes") > 15
     ) {
       const openWeatherRes = await axios.get(openWeatherUrl(result.city))
       if (openWeatherRes.data) {
         weather[result.city] = weatherObj(openWeatherRes.data)
         db.query(
           `UPDATE weather
-                     SET icon_id=${weather[result.city].icon_id} ,
-                         temperature=${weather[result.city].temperature},
-                         last_updated=${moment()
-                           .utc()
-                           .toISOString()}
-                     WHERE city=${result.city}`,
+           SET icon_id='${weather[result.city].icon_id}' ,
+               temperature='${weather[result.city].temperature}',
+               last_updated='${moment()
+                 .utc()
+                 .format("YYYY-MM-DD HH:mm:ss")}' 
+           WHERE city='${result.city}';`,
           (err, results, fields) => {
             if (err) {
               console.error(err)
@@ -48,10 +48,11 @@ const getOrUpdateWeather = async (results, res) => {
       }
     } else {
       weather[result.city] = JSON.parse(JSON.stringify(result))
-      delete weather.last_updated
-      delete weather.city
+      delete weather[result.city].last_updated
+      delete weather[result.city].city
     }
   }
+  return weather
 }
 
 const openWeatherUrl = city => {
