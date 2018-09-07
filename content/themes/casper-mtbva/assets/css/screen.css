@@ -2261,7 +2261,7 @@ Usage (In Ghost editor):
     padding-top: 20px;
     padding-bottom: 60px;
     color: #fff;
-    background: color(var(--darkgrey) l(-15%));
+    background: url('/content/images/2018/09/blue_ridge_mountains.jpg');
 }
 
 .site-footer-content {
@@ -2315,3 +2315,82 @@ Usage (In Ghost editor):
         margin-left: 0;
     }
 }
+
+.sponsors-container {
+    padding: 0.5rem;
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    align-content: stretch;
+}
+
+.sponsor {
+    flex: 1 1 auto;
+    padding: 0.25rem;
+}
+
+.sponsor,
+.sponsor img {
+    width: 13rem;
+}
+
+.blueridge-container {
+    margin-bottom: 1rem;
+}
+img.blueridge {
+    width: 15rem;
+}
+img.bath {
+    width: 11rem;
+}
+img.deschutes {
+    width: 12rem;
+}
+
+.skolrood-container {
+    width: 17rem;
+}
+img.skolrood {
+    width: 19rem;
+}
+
+@media (max-width: 640px) {
+    img.skolrood {
+        width: 15rem;
+    }
+}
+
+@media (max-width: 500px) {
+    .sponsor,
+    .sponsor img {
+        width: 10rem;
+    }
+
+    img.blueridge {
+        width: 11rem;
+    }
+
+    img.deschutes {
+        width: 9rem;
+    }
+
+    img.skolrood {
+        width: 14rem;
+    }
+}
+
+.copyright {
+    margin: auto;
+    padding-top: 2rem;
+    padding-bottom: 1rem;
+    text-align: center;
+    color: white;
+}
+
+.github svg {
+    width: 2rem;
+}
+

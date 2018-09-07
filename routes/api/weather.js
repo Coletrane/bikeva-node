@@ -24,6 +24,7 @@ const getOrUpdateWeather = async (results, res) => {
         .utc()
         .diff(moment(result.last_updated).utc(), "minutes") > 15
     ) {
+      console.info("Weather data is older than 15 minutes, calling OpenWeatherAPI and updating DB")
       const openWeatherRes = await axios.get(openWeatherUrl(result.city))
       if (openWeatherRes.data) {
         weather[result.city] = weatherObj(openWeatherRes.data)
