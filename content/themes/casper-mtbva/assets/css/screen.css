@@ -66,6 +66,10 @@ h1, h2, h3, h4, h5, h6 {
 .site-main {
     z-index: 100;
     flex-grow: 1;
+    background-image: url("/content/images/2018/09/asfalt-light.png");
+    background-color: rgb(78, 69, 49);
+    background-repeat: repeat;
+    background-position-y: 0px;
 }
 
 /* Full width page blocks */
@@ -144,7 +148,7 @@ h1, h2, h3, h4, h5, h6 {
     min-height: 200px;
     max-height: 600px;
     text-align: center;
-    height: 100vh;
+    height: 60vh;
 }
 
 .site-title {
@@ -188,6 +192,52 @@ h1, h2, h3, h4, h5, h6 {
     background-size: cover;
 }
 
+.mtbva-weather {
+    height: 10rem;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0,0,0, 0.5);
+}
+
+.weather-city {
+    flex: 0 1 auto;
+    padding: 0 2rem;
+}
+
+.city-name {
+    font-size: 2rem;
+    padding-top: 2rem;
+}
+
+.temperature {
+    font-size: 3rem;
+}
+
+.temp-icon img {
+    margin-bottom: 1.8rem;
+    width: 6rem;
+}
+
+@media (max-width: 450px) {
+    .mtbva-weather {
+        height: 7rem;
+    }
+
+    .city-name {
+        font-size: 1.5rem;
+    }
+
+    .temperature {
+        font-size: 2rem;
+    }
+
+    .temp-icon img {
+        width: 4rem;
+        margin-bottom: 1rem;
+    }
+}
 /* 5. Site Navigation
 /* ---------------------------------------------------------- */
 
@@ -221,7 +271,7 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
 .site-nav-logo {
     flex-shrink: 0;
     display: block;
-    margin-left: 24px;
+    margin-left: 20px;
     padding: 6px 0;
     color: #fff;
     font-size: 1.7rem;
@@ -242,6 +292,7 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
 
 .xxc-va-logo img {
     height: 40px;
+    margin-top: 6px;
 }
 
 .nav {
@@ -369,9 +420,11 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
     }
     .site-nav-left {
         margin-right: 0;
-        padding-left: 4vw;
     }
-    .site-nav-right {
+    .site-nav-logo {
+        margin-left: 10px;
+    }
+    .xxc-va-logo {
         display: none;
     }
 }

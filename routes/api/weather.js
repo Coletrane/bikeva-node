@@ -51,6 +51,10 @@ const getOrUpdateWeather = async (results, res) => {
       delete weather[result.city].last_updated
       delete weather[result.city].city
     }
+    weather[result.city].icon = weatherIcons.find(icon => {
+      return icon.ow === weather[result.city].icon_id
+    }).icon
+    delete weather[result.city].icon_id
   }
   return weather
 }
