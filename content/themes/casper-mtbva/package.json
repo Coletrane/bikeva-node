@@ -14,7 +14,8 @@
     "scripts": {
         "dev": "gulp",
         "zip": "gulp zip",
-        "test": "gscan ."
+        "test": "gscan .",
+        "postinstall": "cp node_modules/parallax-js/dist/parallax.min.js ./assets/js"
     },
     "author": {
         "name": "Ghost Foundation",
