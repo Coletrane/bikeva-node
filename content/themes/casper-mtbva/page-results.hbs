@@ -15,12 +15,10 @@ into the {body} of the default.hbs template --}}
 </header>
 
 {{!-- The main content area --}}
-<main id="site-main" class="site-main outer">
+<main id="site-main"
+      class="site-main outer">
   <div class="inner mtbva-results">
     {{> "results/race-select"}}
-    <div id="mtbva-results-table"
-         class="mtbva-results-table">
-      {{> "results/results-table"}}
-    </div>
+    {{> "results/results-table"}}
   </div>
 </main>

@@ -1,16 +1,16 @@
-<div class="header-table">
-  <table>
-    <thead>
-      <tr>
-        <th>Position</th>
-        <th>Name</th>
-        <th>Time</th>
-      </tr>
-    </thead>
-  </table>
-</div>
-<div class="body-table">
-
+<div id="mtbva-results-table"
+     class="mtbva-results-table">
+  <div class="header-table">
+    <table>
+      <thead>
+        <tr>
+          <th>Position</th>
+          <th>Name</th>
+          <th>Time</th>
+        </tr>
+      </thead>
+    </table>
+  </div>
 </div>
 
 {{!-- The #contentFor helper here will send everything inside it up to the matching #block helper found in default.hbs --}}
@@ -25,10 +25,11 @@
         "/api/results/" +
         race
       ).then(function(res) {
+        var bodyTable = $('<div class="body-table">')
         res.classes.forEach(function(clazz) {
-          var tableContainer = $('<div class="' + clazz.name + '-table">')
+          // var tableContainer = $("<div class=\"" + clazz.name + "-table\">")
           var classTitle = $("<h3 class=\"results-class-name\">").text(clazz.name)
-          tableContainer.append(classTitle)
+          bodyTable.append(classTitle)
           var table = $("<table>")
           var tbody = $("<tbody>")
           clazz.riders.forEach(function(rider, i, arr) {
@@ -41,10 +42,10 @@
             )
           })
           table.append(tbody)
-          tableContainer.append(table)
-          $("#mtbva-results-table .body-table").append(tableContainer)
+          bodyTable.append(table)
         })
-        window.mtbvaResults[$("#race-select").val()] = $("#mtbva-results-table")
+        window.mtbvaResults[race] = bodyTable
+        replaceResults(race)
       })
       // .catch(function(err) {
       // TODO: sentry
@@ -94,7 +95,6 @@
         if (queryStrArr.length === 2) {
           // url query param
           getResults(queryStrArr[1])
-          replaceResults(queryStrArr[1])
         } else {
           updateResults()
         }
