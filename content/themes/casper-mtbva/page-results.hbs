@@ -2,14 +2,25 @@
 {{!-- The tag above means: insert everything in this file
 into the {body} of the default.hbs template --}}
 
-{{> "results/results"}}
+<header class="site-header outer mtbva-parallax"
+        style="background-image: url({{post.feature_image}});">
+  <div class="inner">
+    {{> "weather"}}
+    <div class="site-header-content">
+      <h1 class="site-title">
+        Results
+      </h1>
+    </div>
+  </div>
+</header>
 
 {{!-- The main content area --}}
 <main id="site-main" class="site-main outer">
-  <div class="inner">
+  <div class="inner mtbva-results">
     {{> "results/race-select"}}
-    <div id="mtbva-results">
-      {{> "results/middle-mountain-momma-2018"}}
+    <div id="mtbva-results-table"
+         class="mtbva-results-table">
+      {{> "results/results-table"}}
     </div>
   </div>
 </main>

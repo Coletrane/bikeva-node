@@ -196,11 +196,12 @@ h1, h2, h3, h4, h5, h6 {
 .mtbva-weather {
     height: 10rem;
     text-align: center;
-    display: flex;
     align-items: center;
     justify-content: center;
-    background-color: var(--transparent-black);
+    background: var(--transparent-black);
     margin-top: 60px;
+    display: flex;
+    visibility: hidden;
 }
 
 .weather-city {
@@ -368,7 +369,7 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
 }
 
 .social-link-ig svg {
-    height: 2.7rem;
+    height: 3rem;
 }
 
 .social-lnk-st svg {
@@ -2036,6 +2037,44 @@ Usage (In Ghost editor):
     .author-stats {
         display: none;
     }
+}
+
+.mtbva-results {
+    text-align: center;
+}
+
+.mtbva-results-table table {
+    background: linear-gradient(to right, #77ad35d9, #3d7635d6);
+    width:100%;
+    table-layout: fixed;
+  text-align: center;
+}
+
+.header-table {
+    background-color: rgba(255,255,255,0.3);
+}
+
+.body-table {
+  height:300px;
+  overflow-x:auto;
+  margin-top: 0px;
+  border: 1px solid rgba(255,255,255,0.3);
+}
+
+.header-table th {
+  padding: 20px 15px;
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: #fff;
+  text-transform: uppercase;
+}
+.body-table td {
+  padding: 15px;
+  vertical-align:middle;
+  font-weight: 300;
+  font-size: 1.5rem;
+  color: #fff;
+  border-bottom: solid 1px rgba(255,255,255,0.1);
 }
 
 

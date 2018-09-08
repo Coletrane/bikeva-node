@@ -1,20 +1,18 @@
-{{!-- The big featured header, it uses blog cover image as a BG if available --}}
-<header class="site-header outer {{#if @blog.cover_image}}" style="background-image: url({{@blog.cover_image}}){{else}}no-cover{{/if}}">
-  <div class="inner">
-    <div class="site-header-content">
-      <h1 class="site-title">
-        {{#if @blog.logo}}
-          <img class="site-logo"
-               src="{{@blog.logo}}"
-               alt="{{@blog.title}}"/>
-        {{else}}
-          Results
-        {{/if}}
-      </h1>
-      <h2 class="site-description">{{@blog.description}}</h2>
-    </div>
-  </div>
-</header>
+<div class="header-table">
+  <table>
+    <thead>
+      <tr>
+        <th>Position</th>
+        <th>Name</th>
+        <th>Time</th>
+      </tr>
+    </thead>
+  </table>
+</div>
+<div class="body-table">
+
+</div>
+
 {{!-- The #contentFor helper here will send everything inside it up to the matching #block helper found in default.hbs --}}
 {{#contentFor "scripts"}}
   <script>
@@ -27,30 +25,26 @@
         "/api/results/" +
         race
       ).then(function(res) {
-        var results = $("<div class=\"results-inner\">")
         res.classes.forEach(function(clazz) {
-          results.append($("<h3 class=\"results-class-name\">").text(clazz.name))
+          var tableContainer = $('<div class="' + clazz.name + '-table">')
+          var classTitle = $("<h3 class=\"results-class-name\">").text(clazz.name)
+          tableContainer.append(classTitle)
           var table = $("<table>")
-          var thead = $("<thead>")
-          thead.append(
-            $("<th>").text("position"),
-            $("<th>").text("name"),
-            $("<th>").text("time")
-          )
-          table.append(thead)
           var tbody = $("<tbody>")
           clazz.riders.forEach(function(rider, i, arr) {
-            tbody.append(
-              $("<td>").text(i + 1),
-              $("<td>").text(rider.name),
-              $("<td>").text(rider.time)
+            tbody.append($("<tr>")
+              .append(
+                $("<td>").text(i + 1),
+                $("<td>").text(rider.name),
+                $("<td>").text(rider.time)
+              )
             )
           })
           table.append(tbody)
-          results.append(table)
+          tableContainer.append(table)
+          $("#mtbva-results-table .body-table").append(tableContainer)
         })
-        $("#mtbva-results").append(results)
-        window.mtbvaResults[$("#race-select").val()] = results
+        window.mtbvaResults[$("#race-select").val()] = $("#mtbva-results-table")
       })
       // .catch(function(err) {
       // TODO: sentry
@@ -61,8 +55,8 @@
       if (race) {
         $("#race-select").val(race)
       }
-      $("#mtbva-results div:first").remove()
-      $("#mtbva-results").append(window.mtbvaResults[$("#race-select").val()])
+      $("#mtbva-results-table .body-table").remove()
+      $("#mtbva-results-table").append(window.mtbvaResults[$("#race-select").val()])
     }
 
     function updateResults() {
@@ -81,12 +75,18 @@
       updateResults()
     })
 
+    // Keep table header sticky
+    $(window).on("load resize ", function() {
+      var scrollWidth = $(".body-table").width() - $(".body-table table").width()
+      $(".header-table").css({ "padding-right": scrollWidth })
+    }).resize()
+
     if (window.location.href.indexOf("/results") !== -1) {
       // first item in select list's table is always static
       var resultStr = $("#race-select").val().toLowerCase()
       resultStr = resultStr.split(" ").join("-")
       window.mtbvaResults = {
-        resultStr: $("#mtbva-results div:first")
+        // resultStr: $("#mtbva-results-table div:first")
       }
 
       var queryStrArr = window.location.search.split("=")
