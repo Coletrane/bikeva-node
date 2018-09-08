@@ -61,15 +61,16 @@ h1, h2, h3, h4, h5, h6 {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+    background-image: url("/content/images/2018/09/asfalt-light.png");
+    background-color: rgb(78, 69, 49);
+    background-repeat: repeat;
+    background-position-y: 0px;
 }
 
 .site-main {
     z-index: 100;
     flex-grow: 1;
-    background-image: url("/content/images/2018/09/asfalt-light.png");
-    background-color: rgb(78, 69, 49);
-    background-repeat: repeat;
-    background-position-y: 0px;
+
 }
 
 /* Full width page blocks */
@@ -198,12 +199,14 @@ h1, h2, h3, h4, h5, h6 {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: rgba(0,0,0, 0.5);
+    background-color: var(--transparent-black);
+    margin-top: 60px;
 }
 
 .weather-city {
     flex: 0 1 auto;
     padding: 0 2rem;
+    color: white;
 }
 
 .city-name {
@@ -238,6 +241,7 @@ h1, h2, h3, h4, h5, h6 {
         margin-bottom: 1rem;
     }
 }
+
 /* 5. Site Navigation
 /* ---------------------------------------------------------- */
 
@@ -300,6 +304,7 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
     margin: 0 0 0 -12px;
     padding: 0;
     list-style: none;
+    font-size: 1.5rem;
 }
 
 .nav li {
@@ -359,11 +364,11 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
 }
 
 .social-link-fb svg {
-    height: 1.5rem;
+    height: 2.5rem;
 }
 
-.social-link-ig {
-    height: 1.7rem;
+.social-link-ig svg {
+    height: 2.7rem;
 }
 
 .social-lnk-st svg {
@@ -426,6 +431,16 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
     }
     .xxc-va-logo {
         display: none;
+    }
+    .nav {
+        font-size: 1rem;
+    }
+    .social-link-fb svg {
+        height: 1.5rem;
+    }
+
+    .social-link-ig svg {
+        height: 1.7rem;
     }
 }
 
@@ -720,7 +735,6 @@ The first (most recent) post in the list is styled to be bigger than the others 
 .post-template .site-main,
 .page-template .site-main {
     padding-bottom: 4vw;
-    background: #fff;
 }
 
 .post-full {
@@ -731,7 +745,7 @@ The first (most recent) post in the list is styled to be bigger than the others 
 
 .post-full-header {
     margin: 0 auto;
-    padding: 6vw 3vw 3vw;
+    padding: 3vw 3vw 3vw;
     max-width: 1040px;
     text-align: center;
 }
@@ -757,7 +771,8 @@ The first (most recent) post in the list is styled to be bigger than the others 
 
 .post-full-title {
     margin: 0;
-    color: color(var(--darkgrey) l(-5%));
+    color: white;
+    text-shadow: 2px 8px 0px rgb(0, 0, 0);
 }
 
 .date-divider {
@@ -800,7 +815,7 @@ The first (most recent) post in the list is styled to be bigger than the others 
 
 @media (max-width: 1170px) {
     .post-full-content {
-        padding: 5vw 7vw 0;
+        padding: 2vw 7vw 0;
     }
 }
 @media (max-width: 800px) {
@@ -1405,7 +1420,7 @@ Usage (In Ghost editor):
 
 .post-full-authors-content p {
     margin-bottom: 0;
-    color: var(--midgrey);
+    color: white;
     font-size: 1.4rem;
     letter-spacing: 0.2px;
     text-align: center;
@@ -1414,7 +1429,6 @@ Usage (In Ghost editor):
 
 .post-full-authors-content a {
     display: inline-block;
-    color: color(var(--darkgrey) l(+20%));
     font-size: 1.4rem;
     font-weight: 600;
     text-transform: uppercase;
@@ -1682,17 +1696,18 @@ Usage (In Ghost editor):
     z-index: 1000;
     display: flex;
     align-items: center;
-    height: 60px;
+    height: 30px;
     border-bottom: rgba(0,0,0,0.06) 1px solid;
-    background: rgba(255,255,255, 1);
     transition: all 500ms cubic-bezier(0.19, 1, 0.22, 1);
     transform: translate3d(0, -120%, 0);
+    background: var(--transparent-black);
 }
 
 .floating-active {
     visibility: visible;
     transition: all 500ms cubic-bezier(0.22, 1, 0.27, 1);
     transform: translate3d(0, 0, 0);
+    top: 60px;
 }
 
 .floating-header-logo {
@@ -1708,7 +1723,7 @@ Usage (In Ghost editor):
 .floating-header-logo a {
     display: flex;
     align-items: center;
-    color: var(--darkgrey);
+    color: white;
     line-height: 1.1em;
     font-weight: 700;
 }
@@ -1731,7 +1746,7 @@ Usage (In Ghost editor):
     flex: 1;
     overflow: hidden;
     margin: 0;
-    color: #2e2e2e;
+    color: white;
     font-size: 1.6rem;
     line-height: 1.3em;
     font-weight: bold;
@@ -1765,7 +1780,7 @@ Usage (In Ghost editor):
     display: flex;
     align-items: center;
     margin-right: 10px;
-    color: rgba(0,0,0,0.7);
+    color: white;
     font-weight: 500;
 }
 
@@ -1781,10 +1796,10 @@ Usage (In Ghost editor):
 .floating-header-share-fb {
     display: block;
     align-items: center;
-    width: 60px;
-    height: 60px;
+    width: 30px;
+    height: 30px;
     color: #fff;
-    line-height: 48px;
+    line-height: 30px;
     text-align: center;
     transition: all 500ms cubic-bezier(0.19, 1, 0.22, 1);
 }
@@ -1803,9 +1818,9 @@ Usage (In Ghost editor):
     bottom: -1px;
     left: 0;
     width: 100%;
-    height: 2px;
+    height: 6px;
     border: none;
-    color: var(--blue);
+    color: var(--mtbva-light-green);
     background: transparent;
 
     appearance: none;
@@ -1816,11 +1831,11 @@ Usage (In Ghost editor):
 }
 
 .progress::-webkit-progress-value {
-    background-color: var(--blue);
+    background-color: var(--mtbva-light-green);
 }
 
 .progress::-moz-progress-bar {
-    background-color: var(--blue);
+    background-color: var(--mtbva-light-green);
 }
 
 .progress-container {
@@ -1837,31 +1852,19 @@ Usage (In Ghost editor):
     display: block;
     width: 50%;
     height: inherit;
-    background-color: var(--blue);
+    background-color: var(--mtbva-light-green);
 }
 
 @media (max-width: 900px) {
-    .floating-header {
-        height: 60px;
-    }
     .floating-header-title,
     .floating-header-logo {
         font-size: 1.5rem;
-    }
-    .floating-header-share-tw,
-    .floating-header-share-fb {
-        width: 40px;
-        height: 60px;
-        line-height: 38px;
     }
 }
 
 @media (max-width: 800px) {
     .floating-header-logo {
         margin-left: 10px;
-    }
-    .floating-header-logo a {
-        color: #2e2e2e;
     }
     .floating-header-title,
     .floating-header-divider {

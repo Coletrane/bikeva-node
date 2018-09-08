@@ -6,6 +6,7 @@ into the {body} of the default.hbs template --}}
 <header class="site-header outer mtbva-parallax"
         style="background-image: url({{@blog.cover_image}});">
     <div class="inner">
+      {{> "weather"}}
       <div class="site-header-content">
         <h1 class="site-title">
             {{@blog.title}}
@@ -14,7 +15,6 @@ into the {body} of the default.hbs template --}}
           {{@blog.description}}
         </h2>
       </div>
-      {{> "weather"}}
     </div>
 </header>
 
