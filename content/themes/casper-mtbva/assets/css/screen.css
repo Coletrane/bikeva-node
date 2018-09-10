@@ -193,7 +193,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .mtbva-parallax {
-    height: 80vh;
+    height: 90vh;
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
@@ -390,7 +390,6 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
 
 .social-lnk-st svg {
     height: 1.5rem;
-    color: #FC4C02;
 }
 
 .social-link-wb svg {
@@ -627,12 +626,30 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
 .moving-avatar {
     display: block;
     overflow: hidden;
-    margin: 0 -6px;
-    width: 56px;
-    height: 56px;
+    margin: 0 1rem;
+    width: 130px;
+    height: 130px;
     border: #fff 2px solid;
     border-radius: 100%;
     transition: all 0.5s cubic-bezier(0.4, 0.01, 0.165, 0.99) 0.7s;
+    background: white;
+}
+
+.author-links {
+    text-align: center
+}
+.author-links svg {
+    width: 3rem;
+    height: 3rem;
+    margin: 1rem;
+}
+
+.author-link-st {
+    fill: var(--strava-orange);
+}
+
+.author-link-fb {
+    fill: var(--facebook-blue);
 }
 
 @media (min-width: 800px) {
@@ -1371,7 +1388,6 @@ Usage (In Ghost editor):
     justify-content: space-between;
     align-items: center;
     margin: 0 auto;
-    padding: 3vw 0 6vw 0;
     max-width: 840px;
 }
 
@@ -1580,7 +1596,6 @@ Usage (In Ghost editor):
     display: flex;
     flex-wrap: wrap;
     margin: 0 -20px;
-    padding: 40px 0 0 0;
 }
 
 .read-next-card {
@@ -2352,7 +2367,6 @@ Usage (In Ghost editor):
     background-position: 50%;
     background-repeat: no-repeat;
     background-size: cover;
-    height: 80%;
 }
 
 .site-footer-content {
@@ -2362,6 +2376,7 @@ Usage (In Ghost editor):
     align-items: center;
     color: rgba(255,255,255,0.7);
     font-size: 1.3rem;
+    height: 80%;
 }
 
 .site-footer-content a {
@@ -2416,6 +2431,7 @@ Usage (In Ghost editor):
     justify-content: space-around;
     align-items: center;
     align-content: stretch;
+    height: 80%;
 }
 
 .sponsor {
@@ -2423,29 +2439,29 @@ Usage (In Ghost editor):
     padding: 0.25rem;
 }
 
-.sponsor,
+.sponsor {
+    width: 30%;
+}
+
 .sponsor img {
-    width: 13rem;
+    width: 100%;
 }
 
 .blueridge-container {
     margin-bottom: 1rem;
 }
-img.blueridge {
-    width: 15rem;
+.blueridge-container {
+    width: 40%;
 }
-img.bath {
-    width: 11rem;
+.bath-container {
+    width: 35%;
 }
 img.deschutes {
-    width: 12rem;
+    width: 32%;
 }
 
 .skolrood-container {
-    width: 17rem;
-}
-img.skolrood {
-    width: 19rem;
+    width: 40%;
 }
 
 @media (max-width: 640px) {
