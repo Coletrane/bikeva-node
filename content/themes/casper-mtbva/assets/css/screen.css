@@ -151,7 +151,7 @@ h1, h2, h3, h4, h5, h6 {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 10vw 4vw;
+    padding: 32vw 4vw;
     min-height: 200px;
     max-height: 600px;
     text-align: center;
@@ -473,7 +473,7 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
 }
 
 .post-card {
-    flex: 1 1 300px;
+    flex: 1 1 400px;
     display: flex;
     flex-direction: column;
     overflow: hidden;
@@ -501,7 +501,7 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
 
 .post-card-image {
     width: auto;
-    height: 200px;
+    height: 500px;
     background: var(--lightgrey) no-repeat center center;
     background-size: cover;
 }
@@ -710,6 +710,7 @@ The first (most recent) post in the list is styled to be bigger than the others 
     .home-template .post-feed .post-card:nth-child(6n+1):not(.no-image) {
         flex: 1 1 100%;
         flex-direction: row;
+        height: 500px;
     }
 
     .home-template .post-feed .post-card:nth-child(6n+1):not(.no-image) .post-card-image-link {
@@ -2362,7 +2363,7 @@ Usage (In Ghost editor):
     padding-top: 20px;
     padding-bottom: 60px;
     color: #fff;
-    background: url('/content/images/2018/09/blue_ridge_mountains.jpg');
+    background: var(--footer-image);
     background-attachment: fixed;
     background-position: 50%;
     background-repeat: no-repeat;
@@ -2422,6 +2423,21 @@ Usage (In Ghost editor):
     }
 }
 
+.sponsors-middle {
+    margin-left: -2vw;
+    margin-right: -2vw;
+    margin-bottom: 40px;
+    background: var(--footer-image);
+  background-attachment: fixed;
+  background-position: 50%;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.sponsors-middle .sponsor {
+  width: 15%;
+}
+
 .sponsors-container {
     padding: 0.5rem;
     text-align: center;
@@ -2436,11 +2452,11 @@ Usage (In Ghost editor):
 
 .sponsor {
     flex: 1 1 auto;
-    padding: 0.25rem;
+    margin: 1rem;
 }
 
 .sponsor {
-    width: 30%;
+    width: 25%;
 }
 
 .sponsor img {
@@ -2453,40 +2469,17 @@ Usage (In Ghost editor):
 .blueridge-container {
     width: 40%;
 }
-.bath-container {
-    width: 35%;
-}
-img.deschutes {
-    width: 32%;
-}
-
 .skolrood-container {
-    width: 40%;
+    width: 45%;
 }
-
-@media (max-width: 640px) {
-    img.skolrood {
-        width: 15rem;
-    }
+.bath-container {
+    width: 30%;
 }
-
-@media (max-width: 500px) {
-    .sponsor,
-    .sponsor img {
-        width: 10rem;
-    }
-
-    img.blueridge {
-        width: 11rem;
-    }
-
-    img.deschutes {
-        width: 9rem;
-    }
-
-    img.skolrood {
-        width: 14rem;
-    }
+.deschutes-container {
+    width: 25%;
+}
+.tavern-container {
+  width: 20%;
 }
 
 .copyright {

@@ -6,28 +6,34 @@ into the {body} of the default.hbs template --}}
 <header class="site-header outer mtbva-parallax"
         style="background-image: url({{@blog.cover_image}});">
   <div class="inner">
-      <div class="site-header-content">
-        <h1 class="site-title">
-            {{@blog.title}}
-        </h1>
-        <h2 class="site-description">
-          {{@blog.description}}
-        </h2>
-      </div>
+    <div class="site-header-content">
+      <h1 class="site-title">
+        {{@blog.title}}
+      </h1>
+      <h2 class="site-description">
+        {{@blog.description}}
+      </h2>
     </div>
+  </div>
 </header>
 
 {{> "weather"}}
 
 {{!-- The main content area --}}
-<main id="site-main" class="site-main outer">
+<main id="site-main"
+      class="site-main outer">
   <div class="inner">
     <div class="post-feed">
-      {{#foreach posts}}
+      {{#foreach posts from="0" to="10"}}
 
       {{!-- The tag below includes the markup for each post - partials/post-card.hbs --}}
         {{> "post-card"}}
-
+      {{/foreach}}
+      <div class="sponsors-middle">
+        {{> "sponsors"}}
+      </div>
+      {{#foreach posts from="11"}}
+        {{> "post-card"}}
       {{/foreach}}
     </div>
   </div>
