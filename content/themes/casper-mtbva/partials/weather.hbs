@@ -43,7 +43,7 @@
       ).then(function(res) {
         window.mtbvaWeather = res
         Object.keys(window.mtbvaWeather).forEach(function(key) {
-          $("#" + key + " .temperature").text(window.mtbvaWeather[key].temperature)
+          $("#" + key + " .temperature").text(window.mtbvaWeather[key].temperature + '℉')
           $("#" + key + " .temp-icon").append(
             $("<img>").attr(
               "src",
