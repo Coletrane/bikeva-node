@@ -200,8 +200,9 @@ h1, h2, h3, h4, h5, h6 {
     background-size: cover;
 }
 
-.post-weather {
-    margin-top: 60px;
+.post-weather .mtbva-weather {
+    margin-top: 80px;
+    height: 90px;
 }
 
 .mtbva-weather {
@@ -449,14 +450,14 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
         display: none;
     }
     .nav {
-        font-size: 1rem;
+        font-size: 1.2rem;
     }
     .social-link-fb svg {
-        height: 1.5rem;
+        height: 2rem;
     }
 
     .social-link-ig svg {
-        height: 1.7rem;
+        height: 2.5rem;
     }
 }
 
@@ -771,11 +772,16 @@ The first (most recent) post in the list is styled to be bigger than the others 
     }
 }
 
+.post-header-content {
+    margin: 28% auto;
+}
+
 .post-full-meta {
     display: flex;
     justify-content: center;
     align-items: center;
     color: var(--midgrey);
+    text-shadow: 1px 1px 0px rgb(0, 0, 0);
     font-size: 1.4rem;
     font-weight: 600;
     text-transform: uppercase;
@@ -788,7 +794,7 @@ The first (most recent) post in the list is styled to be bigger than the others 
 .post-full-title {
     margin: 0;
     color: white;
-    text-shadow: 2px 8px 0px rgb(0, 0, 0);
+    text-shadow: 3px 5px 0px rgb(0, 0, 0);
 }
 
 .date-divider {
@@ -837,6 +843,19 @@ The first (most recent) post in the list is styled to be bigger than the others 
 @media (max-width: 800px) {
     .post-full-content {
         font-size: 1.9rem;
+    }
+}
+@media (max-width: 600px) {
+    .post-full-content {
+        padding: 0;
+    }
+
+    .post-full-content img {
+        padding: 2vw 0;
+    }
+
+    .footnotes, .post-full-comments, .post-full-content blockquote, .post-full-content dl, .post-full-content h1, .post-full-content h2, .post-full-content h3, .post-full-content h4, .post-full-content h5, .post-full-content h6, .post-full-content ol, .post-full-content p, .post-full-content pre, .post-full-content ul {
+        padding: 2vw 2vw;
     }
 }
 
@@ -1709,7 +1728,7 @@ Usage (In Ghost editor):
     z-index: 1000;
     display: flex;
     align-items: center;
-    height: 30px;
+    height: 40px;
     border-bottom: rgba(0,0,0,0.06) 1px solid;
     transition: all 500ms cubic-bezier(0.19, 1, 0.22, 1);
     transform: translate3d(0, -120%, 0);
@@ -1809,8 +1828,8 @@ Usage (In Ghost editor):
 .floating-header-share-fb {
     display: block;
     align-items: center;
-    width: 30px;
-    height: 30px;
+    width: 40px;
+    height: 40px;
     color: #fff;
     line-height: 30px;
     text-align: center;
@@ -1876,12 +1895,12 @@ Usage (In Ghost editor):
 }
 
 @media (max-width: 800px) {
-    .floating-header-logo {
+    .floating-header-title {
         margin-left: 10px;
     }
-    .floating-header-title,
+    .floating-header-logo,
     .floating-header-divider {
-        visibility: hidden;
+        display: none;
     }
 }
 

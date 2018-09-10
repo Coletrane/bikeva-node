@@ -10,27 +10,23 @@ into the {body} of the default.hbs template --}}
     {{> "weather"}}
   </div>
   <main id="site-main"
-        class="site-main outer">
+        class="site-main">
     <div class="inner">
       <article class="post-full {{post_class}} {{#unless feature_image}}no-image{{/unless}}">
-        <header class="post-full-header">
-          <section class="post-full-meta">
-            <time class="post-full-meta-date"
-                  datetime="{{date format="YYYY-MM-DD"}}">{{date format="D MMMM YYYY"}}</time>
-            {{#primary_tag}}
-              <span class="date-divider">/</span>
-              <a href="{{url}}">{{name}}</a>
-            {{/primary_tag}}
-          </section>
-          <h1 class="post-full-title">{{title}}</h1>
+        <header class="post-full-header mtbva-parallax"
+                style="background-image: url({{feature_image}})">
+          <div class="post-header-content">
+            <section class="post-full-meta">
+              <time class="post-full-meta-date"
+                    datetime="{{date format="YYYY-MM-DD"}}">{{date format="D MMMM YYYY"}}</time>
+              {{#primary_tag}}
+                <span class="date-divider">/</span>
+                <a class="post-full-meta-primary-tag" href="{{url}}">{{name}}</a>
+              {{/primary_tag}}
+            </section>
+            <h1 class="post-full-title">{{title}}</h1>
+          </div>
         </header>
-
-        {{#if feature_image}}
-          <figure class="post-full-image"
-                  style="background-image: url({{feature_image}})">
-          </figure>
-        {{/if}}
-
         <section class="post-full-content">
           <div class="post-content">
             {{content}}
