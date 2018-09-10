@@ -114,6 +114,7 @@ h1, h2, h3, h4, h5, h6 {
     color: #fff;
     background: color(var(--darkgrey) l(-5%)) no-repeat center center;
     padding: 0;
+    height: 90vh;
 }
 
 .site-header:before {
@@ -155,7 +156,6 @@ h1, h2, h3, h4, h5, h6 {
     min-height: 200px;
     max-height: 600px;
     text-align: center;
-    height: 60vh;
 }
 
 .site-title {
@@ -184,6 +184,9 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 @media (max-width: 500px) {
+    .site-header, .site-header-content {
+        height: 60vh;
+    }
     .site-title {
         font-size: 3rem;
     }
@@ -191,9 +194,13 @@ h1, h2, h3, h4, h5, h6 {
         font-size: 1.8rem;
     }
 }
+@media (min-width: 1200px) {
+    .site-header, .site-header-content {
+        height: 100vh;
+    }
+}
 
 .mtbva-parallax {
-    height: 90vh;
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
@@ -2428,10 +2435,6 @@ Usage (In Ghost editor):
     margin-right: -2vw;
     margin-bottom: 40px;
     background: var(--footer-image);
-  background-attachment: fixed;
-  background-position: 50%;
-  background-repeat: no-repeat;
-  background-size: cover;
 }
 
 .sponsors-middle .sponsor {
