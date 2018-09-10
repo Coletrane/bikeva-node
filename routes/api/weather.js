@@ -69,7 +69,7 @@ const openWeatherUrl = city => {
 const weatherObj = openWeatherData => {
   return {
     icon_id: openWeatherData.weather[0].icon,
-    temperature: math.round(openWeatherData.main.temp)
+    temperature: Math.round(openWeatherData.main.temp)
   }
 }
 

@@ -419,7 +419,7 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
     fill: #fff;
 }
 
-@media (max-width: 700px) {
+@media (max-width: 600px) {
     .site-header {
         padding-right: 0;
         padding-left: 0;
@@ -2039,8 +2039,13 @@ Usage (In Ghost editor):
     }
 }
 
+.race-select {
+    margin: 2rem 0;
+}
+
 .mtbva-results {
     text-align: center;
+    padding: 0 4vw;
 }
 
 .mtbva-results-table table {
@@ -2054,9 +2059,11 @@ Usage (In Ghost editor):
     background-color: rgba(255,255,255,0.3);
 }
 
+.results-class-name {
+    color: white;
+}
+
 .body-table {
-  height:300px;
-  overflow-x:auto;
   margin-top: 0px;
   border: 1px solid rgba(255,255,255,0.3);
 }
@@ -2064,17 +2071,23 @@ Usage (In Ghost editor):
 .header-table th {
   padding: 20px 15px;
   font-weight: 700;
-  font-size: 1.5rem;
+  font-size: 2rem;
   color: #fff;
   text-transform: uppercase;
 }
 .body-table td {
   padding: 15px;
   vertical-align:middle;
-  font-weight: 300;
-  font-size: 1.5rem;
+  font-weight: 600;
+  font-size: 1.8rem;
   color: #fff;
   border-bottom: solid 1px rgba(255,255,255,0.1);
+}
+
+@media (max-width: 600px) {
+    .mtbva-results {
+        padding: 0;
+    }
 }
 
 
@@ -2304,6 +2317,11 @@ Usage (In Ghost editor):
     padding-bottom: 60px;
     color: #fff;
     background: url('/content/images/2018/09/blue_ridge_mountains.jpg');
+    background-attachment: fixed;
+    background-position: 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 80vh;
 }
 
 .site-footer-content {

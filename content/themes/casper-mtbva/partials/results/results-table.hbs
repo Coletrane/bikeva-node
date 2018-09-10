@@ -11,63 +11,75 @@
       </thead>
     </table>
   </div>
+  {{> "results/middle-mountain-momma-2018"}}
 </div>
 
 {{!-- The #contentFor helper here will send everything inside it up to the matching #block helper found in default.hbs --}}
 {{#contentFor "scripts"}}
   <script>
+  window.mtbvaCurrentRace = "middle-mountain-momma-2018"
+
   $(function($) {
     function getResults(race) {
-      $.ajax(
-        window.location.protocol +
-        "//" +
-        window.location.host +
-        "/api/results/" +
-        race
-      ).then(function(res) {
-        var bodyTable = $('<div class="body-table">')
-        res.classes.forEach(function(clazz) {
-          // var tableContainer = $("<div class=\"" + clazz.name + "-table\">")
-          var classTitle = $("<h3 class=\"results-class-name\">").text(clazz.name)
-          bodyTable.append(classTitle)
-          var table = $("<table>")
-          var tbody = $("<tbody>")
-          clazz.riders.forEach(function(rider, i, arr) {
-            tbody.append($("<tr>")
-              .append(
-                $("<td>").text(i + 1),
-                $("<td>").text(rider.name),
-                $("<td>").text(rider.time)
+      if (!$.contains(document, $("#" + race + "-table")[0])) {
+        $.ajax(
+          window.location.protocol +
+          "//" +
+          window.location.host +
+          "/api/results/" +
+          race
+        ).then(function(res) {
+          var bodyTable = $("<div class=\"body-table\" id=\"" + race + "-table\">")
+          res.classes.forEach(function(clazz) {
+            // var tableContainer = $("<div class=\"" + clazz.name + "-table\">")
+            var classTitle = $("<h2 class=\"results-class-name\">").text(clazz.name)
+            bodyTable.append(classTitle)
+            var table = $("<table>")
+            var tbody = $("<tbody>")
+            clazz.riders.forEach(function(rider, i, arr) {
+              tbody.append($("<tr>")
+                .append(
+                  $("<td>").text(i + 1),
+                  $("<td>").text(rider.name),
+                  $("<td>").text(rider.time)
+                )
               )
-            )
+            })
+            table.append(tbody)
+            bodyTable.append(table)
           })
-          table.append(tbody)
-          bodyTable.append(table)
+          replaceResults(race, bodyTable)
         })
-        window.mtbvaResults[race] = bodyTable
-        replaceResults(race)
-      })
-      // .catch(function(err) {
-      // TODO: sentry
-      // })
+        // .catch(function(err) {
+        // TODO: sentry
+        // })
+      }
     }
 
-    function replaceResults(race) {
-      if (race) {
-        $("#race-select").val(race)
+    function replaceResults(race, table) {
+      var previousTable = $("#" + window.mtbvaCurrentRace + "-table")
+      previousTable.css("visibility", "hidden")
+      if (table) {
+        // insert new table into DOM
+        $("#mtbva-results-table .header-table").after(table)
+      } else {
+        // table is already in the DOM
+        $("#" + race + "-table").css("display", "table")
+        $("#" + race + "-table").css("visibility", "visible")
       }
-      $("#mtbva-results-table .body-table").remove()
-      $("#mtbva-results-table").append(window.mtbvaResults[$("#race-select").val()])
+      previousTable.css("display", "none")
+      window.mtbvaCurrentRace = race
     }
 
     function updateResults() {
-      if (window.mtbvaResults[$("#race-select").val()]) {
-        // selected by user again, load from window cache
-        replaceResults()
+      var race = $("#race-select").val()
+      if ($.contains(document, $("#" + race + "-table")[0])) {
+        // selected by user again, show from DOM
+        replaceResults(race)
       } else {
         // selected by user, GET and put in window cache
-        getResults($("#race-select").val())
-        replaceResults()
+        getResults(race)
+        replaceResults(race)
       }
     }
 
@@ -76,29 +88,20 @@
       updateResults()
     })
 
-    // Keep table header sticky
-    $(window).on("load resize ", function() {
-      var scrollWidth = $(".body-table").width() - $(".body-table table").width()
-      $(".header-table").css({ "padding-right": scrollWidth })
-    }).resize()
+    // // Keep table header sticky
+    // $(window).on("load resize ", function() {
+    //   var scrollWidth = $(".body-table").width() - $(".body-table table").width()
+    //   $(".header-table").css({ "padding-right": scrollWidth })
+    // }).resize()
 
-    if (window.location.href.indexOf("/results") !== -1) {
-      // first item in select list's table is always static
-      var resultStr = $("#race-select").val().toLowerCase()
-      resultStr = resultStr.split(" ").join("-")
-      window.mtbvaResults = {
-        // resultStr: $("#mtbva-results-table div:first")
-      }
+    // first item in select list's table is always static
+    var resultStr = $("#race-select").val().toLowerCase()
+    resultStr = resultStr.split(" ").join("-")
 
-      var queryStrArr = window.location.search.split("=")
-      {
-        if (queryStrArr.length === 2) {
-          // url query param
-          getResults(queryStrArr[1])
-        } else {
-          updateResults()
-        }
-      }
+    var queryStrArr = window.location.search.split("=")
+    if (queryStrArr.length === 2) {
+      // url query param
+      getResults(queryStrArr[1])
     }
   })
   </script>
