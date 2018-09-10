@@ -159,6 +159,7 @@ h1, h2, h3, h4, h5, h6 {
     font-size: 7rem;
     font-weight: 800;
     text-shadow: 4px 3px 3px rgb(0, 0, 0);
+    text-transform: uppercase;
 }
 
 .site-logo {
@@ -194,7 +195,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .mtbva-weather {
-    height: 10rem;
+    height: 60px;
     text-align: center;
     align-items: center;
     justify-content: center;
@@ -202,33 +203,28 @@ h1, h2, h3, h4, h5, h6 {
     margin-top: 60px;
     display: flex;
     visibility: hidden;
+    width: 100%;
 }
 
 .weather-city {
     flex: 0 1 auto;
-    padding: 0 2rem;
+    padding: 0 4rem;
     color: white;
 }
 
 .city-name {
-    font-size: 2rem;
-    padding-top: 2rem;
+    font-size: 1.8rem;
 }
 
 .temperature {
-    font-size: 3rem;
+    font-size: 2.5rem;
 }
 
 .temp-icon img {
-    margin-bottom: 1.8rem;
-    width: 6rem;
+    width: 4rem;
 }
 
-@media (max-width: 450px) {
-    .mtbva-weather {
-        height: 7rem;
-    }
-
+@media (max-width: 600px) {
     .city-name {
         font-size: 1.5rem;
     }
@@ -238,9 +234,20 @@ h1, h2, h3, h4, h5, h6 {
     }
 
     .temp-icon img {
-        width: 4rem;
+        width: 3rem;
         margin-bottom: 1rem;
     }
+    .mtbva-weather {
+        height: 40px;
+    }
+}
+@media (max-width: 450px) {
+
+    /*.weather-city {*/
+        /*padding: 0 2rem;*/
+    /*}*/
+
+
 }
 
 /* 5. Site Navigation
@@ -2321,7 +2328,7 @@ Usage (In Ghost editor):
     background-position: 50%;
     background-repeat: no-repeat;
     background-size: cover;
-    height: 80vh;
+    height: 80%;
 }
 
 .site-footer-content {
