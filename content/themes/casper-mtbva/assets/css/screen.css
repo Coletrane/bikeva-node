@@ -76,13 +76,6 @@ h1, h2, h3, h4, h5, h6 {
 /* Full width page blocks */
 .outer {
     position: relative;
-    padding: 0 4vw;
-}
-
-@media (max-width: 600px) {
-    .outer {
-        padding: 0;
-    }
 }
 
 /* Centered content container blocks */
@@ -185,7 +178,7 @@ h1, h2, h3, h4, h5, h6 {
 
 @media (max-width: 500px) {
     .site-header, .site-header-content {
-        height: 60vh;
+        height: 75vh;
     }
     .site-title {
         font-size: 3rem;
@@ -240,7 +233,7 @@ h1, h2, h3, h4, h5, h6 {
     width: 5rem;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 500px) {
     .city-name {
         font-size: 1.5rem;
     }
@@ -475,8 +468,7 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
     position: relative;
     display: flex;
     flex-wrap: wrap;
-    margin: 0 -20px;
-    padding: 40px 0 0 0;
+    margin: 40px 0 auto;
 }
 
 .post-card {
@@ -484,7 +476,7 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
     display: flex;
     flex-direction: column;
     overflow: hidden;
-    margin: 0 20px 40px;
+    margin: 0 30px 40px;
     min-height: 300px;
     background: #fff center center;
     background-size: cover;
@@ -762,10 +754,10 @@ The first (most recent) post in the list is styled to be bigger than the others 
 /* Adjust some margins for smaller screens */
 @media (max-width: 650px) {
     .post-feed {
-        padding-top: 5vw;
+        padding-top: 40px;
     }
     .post-card {
-        margin: 0 20px 5vw;
+        margin: 0;
     }
 }
 
@@ -2370,11 +2362,7 @@ Usage (In Ghost editor):
     padding-top: 20px;
     padding-bottom: 60px;
     color: #fff;
-    background: var(--footer-image);
-    background-attachment: fixed;
-    background-position: 50%;
-    background-repeat: no-repeat;
-    background-size: cover;
+    background-image: var(--footer-image);
 }
 
 .site-footer-content {
@@ -2430,15 +2418,24 @@ Usage (In Ghost editor):
     }
 }
 
-.sponsors-middle {
-    margin-left: -2vw;
-    margin-right: -2vw;
+.sponsor-single {
     margin-bottom: 40px;
-    background: var(--footer-image);
+    width: 100%;
+}
+
+.sponsors-middle {
+    margin-bottom: 40px;
+    background-image: var(--footer-image);
 }
 
 .sponsors-middle .sponsor {
-  width: 15%;
+  width: 15rem;
+}
+
+@media (max-width: 600px) {
+    .sponsors-middle .sponsor {
+        width: 8rem;
+    }
 }
 
 .sponsors-container {
@@ -2460,10 +2457,6 @@ Usage (In Ghost editor):
 
 .sponsor {
     width: 25%;
-}
-
-.sponsor img {
-    width: 100%;
 }
 
 .blueridge-container {
