@@ -19,7 +19,7 @@
     "dev": "NODE_ENV=development node ./server.js",
     "start": "pm2 start process.yml",
     "restart": "pm2 restart process.yml",
-    "postinstall": "echo \n'TODO: https://github.com/TryGhost/Ghost/issues/8754' && sudo mkdir ./node_modules/ghost/core/server/adapters/storage/s3 && cp -r ./node_modules/ghost-storage-adapter-s3/* ./node_modules/ghost/core/server/adapters/storage/s3"
+    "postinstall": "echo \n'TODO: https://github.com/TryGhost/Ghost/issues/8754' && mkdir ./node_modules/ghost/core/server/adapters/storage/s3 && cp -r ./node_modules/ghost-storage-adapter-s3/* ./node_modules/ghost/core/server/adapters/storage/s3"
   },
   "author": "",
   "license": "ISC",
