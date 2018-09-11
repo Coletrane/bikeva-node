@@ -31,19 +31,27 @@ into the {body} of the default.hbs template --}}
         <img src="/content/images/sponsors/nabber/virginias-blue-ridge.jpg"/>
       </a>
     </div>
-    {{#foreach posts from="4" to="6"}}
+    {{#foreach posts from="4" to="7"}}
       {{> "post-card"}}
-      <div class="sponsor-single">
-        <a href="">
-          <img src=""/>
-        </a>
-      </div>
+    {{/foreach}}
+    <div class="sponsor-single">
+      <a href="https://viralstyle.com/store/angelo-wash/Sketchcollect">
+        <img src="/content/images/sponsors/nabber/sketch-collect-banner.jpg"/>
+      </a>
+    </div>
+    {{#foreach posts from="8" to="11"}}
+      {{> "post-card"}}
     {{/foreach}}
     <div class="sponsors-middle mtbva-parallax">
       {{> "sponsors"}}
     </div>
-    {{#foreach posts from="11"}}
+    {{#foreach posts from="11" to="14"}}
       {{> "post-card"}}
     {{/foreach}}
+    <div class="sponsor-single">
+      <a href="http://jackmasonstavern.com/">
+        <img src="/content/images/sponsors/nabber/jack-masons-tavern.jpg"/>
+      </a>
+    </div>
   </div>
 </main>

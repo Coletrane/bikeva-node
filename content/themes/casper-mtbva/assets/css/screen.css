@@ -202,6 +202,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .post-weather .mtbva-weather {
     margin-top: 80px;
+    margin-bottom: 20px;
     height: 90px;
 }
 
@@ -752,12 +753,15 @@ The first (most recent) post in the list is styled to be bigger than the others 
 
 
 /* Adjust some margins for smaller screens */
-@media (max-width: 650px) {
+@media (max-width: 600px) {
+    .post-card-image {
+        height: 300px;
+    }
     .post-feed {
         padding-top: 40px;
     }
     .post-card {
-        margin: 0;
+        margin: 0 0 40px 0;
     }
 }
 
@@ -780,7 +784,6 @@ The first (most recent) post in the list is styled to be bigger than the others 
 .post-full-header {
     margin: 0 auto;
     padding: 3vw 3vw 3vw;
-    max-width: 1040px;
     text-align: center;
 }
 @media (max-width: 500px) {
@@ -843,28 +846,24 @@ The first (most recent) post in the list is styled to be bigger than the others 
 
 .post-full-content {
     position: relative;
-    margin: 0 auto;
-    padding: 70px 100px 0;
     min-height: 230px;
     font-family: Georgia, serif;
     font-size: 2.2rem;
     line-height: 1.6em;
     background: #fff;
+    margin: 0 7vw;
+    padding: 0 4rem 4rem;
 }
 
-@media (max-width: 1170px) {
-    .post-full-content {
-        padding: 2vw 7vw 0;
-    }
-}
 @media (max-width: 800px) {
     .post-full-content {
         font-size: 1.9rem;
+        margin: 0 4vw;
     }
 }
 @media (max-width: 600px) {
     .post-full-content {
-        padding: 0;
+        margin: 0;
     }
 
     .post-full-content img {
@@ -1595,12 +1594,11 @@ Usage (In Ghost editor):
 .read-next-feed {
     display: flex;
     flex-wrap: wrap;
-    margin: 0 -20px;
 }
 
 .read-next-card {
     position: relative;
-    flex: 1 1 300px;
+    flex: 1 1 400px;
     display: flex;
     flex-direction: column;
     overflow: hidden;
@@ -1933,7 +1931,6 @@ Usage (In Ghost editor):
     display: flex;
     flex-direction: column;
     align-items: center;
-    max-width: 920px;
 }
 
 .post-template .post-content > p:first-child {
@@ -2420,6 +2417,10 @@ Usage (In Ghost editor):
 
 .sponsor-single {
     margin-bottom: 40px;
+    width: 100%;
+}
+
+.sponsor-single img {
     width: 100%;
 }
 
