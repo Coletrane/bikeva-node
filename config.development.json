@@ -4,7 +4,7 @@
     "type": "password"
   },
   "paths": {
-    "contentPath": "/Users/coleinman/Programs/mtbva/mtbva-ghost/content"
+    "contentPath": "content"
   },
   "privacy": {
     "useRpcPing": false,
