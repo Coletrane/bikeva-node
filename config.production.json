@@ -26,8 +26,8 @@
   "storage": {
     "active": "s3",
     "s3": {
-      "accessKeyId": "AKIAIE7DN5NLV4NM7GTA",
-      "secretAccessKey": "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",
+      "accessKeyId": "AKIAI2BNB7JMVOTKW6ZA",
+      "secretAccessKey": "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",
       "region": "us-east-1",
       "bucket": "mtbva-ghost",
       "assetHost": "d67lpjl1ad6mv.cloudfront.net"
