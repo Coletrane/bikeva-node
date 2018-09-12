@@ -29,16 +29,6 @@
       "database": "mtbva"
     }
   },
-  "storage": {
-    "active": "s3",
-    "s3": {
-      "accessKeyId": "AKIAIE7DN5NLV4NM7GTA",
-      "secretAccessKey": "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",
-      "region": "us-east-1",
-      "bucket": "mtbva-ghost",
-      "assetHost": "d67lpjl1ad6mv.cloudfront.net"
-    }
-  },
   "mail": {
     "from": "signup@bikeva.com",
     "transport": "SMTP",

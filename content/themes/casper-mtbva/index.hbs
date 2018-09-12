@@ -23,35 +23,57 @@ into the {body} of the default.hbs template --}}
 <main id="site-main"
       class="site-main outer">
   <div class="post-feed">
-    {{#foreach posts from="0" to="3"}}
-      {{> "post-card"}}
-    {{/foreach}}
-    <div class="sponsor-single">
-      <a href="https://www.visitroanokeva.com/">
-        <img src="/content/images/sponsors/nabber/virginias-blue-ridge.jpg"/>
-      </a>
-    </div>
-    {{#foreach posts from="4" to="7"}}
-      {{> "post-card"}}
-    {{/foreach}}
-    <div class="sponsor-single">
-      <a href="https://viralstyle.com/store/angelo-wash/Sketchcollect">
-        <img src="/content/images/sponsors/nabber/sketch-collect-banner.jpg"/>
-      </a>
-    </div>
-    {{#foreach posts from="8" to="11"}}
-      {{> "post-card"}}
-    {{/foreach}}
-    <div class="sponsors-middle mtbva-parallax">
-      {{> "sponsors"}}
-    </div>
-    {{#foreach posts from="11" to="14"}}
-      {{> "post-card"}}
-    {{/foreach}}
-    <div class="sponsor-single">
-      <a href="http://jackmasonstavern.com/">
-        <img src="/content/images/sponsors/nabber/jack-masons-tavern.jpg"/>
-      </a>
-    </div>
+    {{#get "posts" filter="featured:true" limit="all" as |featured|}}
+      {{#foreach featured}}
+        {{> "post-card"}}
+      {{/foreach}}
+    {{/get}}
+    {{#get "posts" filter="featured:false" limit="all" as |posts|}}
+      {{#foreach posts from="0" to="3"}}
+        {{> "post-card"}}
+      {{/foreach}}
+      <div class="sponsor-single">
+        <a href="https://www.visitroanokeva.com/">
+          <img src="/content/images/sponsors/nabber/virginias-blue-ridge.jpg"/>
+        </a>
+      </div>
+      {{#foreach posts from="4" to="7"}}
+        {{> "post-card"}}
+      {{/foreach}}
+      <div class="sponsor-single">
+        <a href="https://www.deschutesbrewery.com/">
+          <img src="/content/images/sponsors/nabber/deschutes.jpg"/>
+        </a>
+      </div>
+      {{#foreach posts from="8" to="11"}}
+        {{> "post-card"}}
+      {{/foreach}}
+      <div class="sponsors-middle mtbva-parallax">
+        {{> "sponsors"}}
+      </div>
+      {{#foreach posts from="12" to="14"}}
+        {{> "post-card"}}
+      {{/foreach}}
+      <div class="sponsor-single">
+        <a href="http://jackmasonstavern.com/">
+          <img src="/content/images/sponsors/nabber/jack-masons-tavern.jpg"/>
+        </a>
+      </div>
+      {{#foreach posts from="15" to="18"}}
+        {{> "post-card"}}
+      {{/foreach}}
+      <div class="sponsor-single">
+        <a href="https://viralstyle.com/store/angelo-wash/Sketchcollect">
+          <img src="/content/images/sponsors/nabber/sketch-collect-banner.jpg"/>
+        </a>
+      </div>
+      {{#foreach posts from="19" to="21"}}
+        {{> "post-card"}}
+      {{/foreach}}
+
+      {{#foreach posts from="22"}}
+        {{> "post-card"}}
+      {{/foreach}}
+    {{/get}}
   </div>
 </main>
