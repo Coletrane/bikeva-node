@@ -47,6 +47,7 @@ $(function($) {
           }
         }
       })
+    window.testParallax()
   }
 
   window.initPostNabbers = function() {

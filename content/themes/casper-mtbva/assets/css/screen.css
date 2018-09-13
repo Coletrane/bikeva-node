@@ -178,7 +178,7 @@ h1, h2, h3, h4, h5, h6 {
 
 @media (max-width: 500px) {
     .site-header, .site-header-content {
-        height: 75vh;
+        height: 85vh;
     }
     .site-title {
         font-size: 3rem;
@@ -232,6 +232,12 @@ h1, h2, h3, h4, h5, h6 {
 
 .temp-icon img {
     width: 5rem;
+}
+
+@media (max-width: 600px) {
+    .mtbva-weather {
+        margin: 10px 0;
+    }
 }
 
 @media (max-width: 500px) {
@@ -491,7 +497,7 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
 }
 
 .post-card {
-    flex: 1 1 400px;
+    flex: 1 1 40vw;
     display: flex;
     flex-direction: column;
     overflow: hidden;
@@ -707,6 +713,12 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
     }
 }
 
+@media (max-width: 600px) {
+    .post-feed {
+        margin-top: 10px;
+    }
+}
+
 .reading-time {
     flex-shrink: 0;
     margin-left: 20px;
@@ -727,9 +739,6 @@ The first (most recent) post in the list is styled to be bigger than the others 
 @media (max-width: 600px) {
     .post-card-image {
         height: 350px;
-    }
-    .post-feed {
-        padding-top: 40px;
     }
     .post-card {
         margin: 0 0 40px 0;
