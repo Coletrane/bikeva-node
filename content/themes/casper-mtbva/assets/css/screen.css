@@ -260,6 +260,24 @@ h1, h2, h3, h4, h5, h6 {
     height: 60vh;
 }
 
+.pay-methods {
+    display: flex;
+    text-align: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.payment-method {
+    flex: 1 1 25%;
+    padding: 1rem;
+}
+
+.apple-pay {
+    width: 80%;
+}
+
+
+
 /* 5. Site Navigation
 /* ---------------------------------------------------------- */
 
@@ -785,6 +803,7 @@ The first (most recent) post in the list is styled to be bigger than the others 
     margin: 0 auto;
     padding: 3vw 3vw 3vw;
     text-align: center;
+    height: 80vh;
 }
 @media (max-width: 500px) {
     .post-full-header {
