@@ -495,7 +495,7 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
     display: flex;
     flex-direction: column;
     overflow: hidden;
-    margin: 0 30px 40px;
+    margin: 0 40px 40px;
     min-height: 300px;
     background: #fff center center;
     background-size: cover;
@@ -724,11 +724,31 @@ The first (most recent) post in the list is styled to be bigger than the others 
 
  */
 
+@media (max-width: 600px) {
+    .post-card-image {
+        height: 350px;
+    }
+    .post-feed {
+        padding-top: 40px;
+    }
+    .post-card {
+        margin: 0 0 40px 0;
+    }
+}
+
 @media (min-width: 795px) {
+    @media (min-width: 1200px) {
+        .post-card-image, .post-card {
+            height: 700px;
+        }
+        .post-card {
+            margin: 0 60px 40px;
+        }
+    }
+
     .home-template .post-feed .post-card:nth-child(6n+1):not(.no-image) {
         flex: 1 1 100%;
         flex-direction: row;
-        height: 500px;
     }
 
     .home-template .post-feed .post-card:nth-child(6n+1):not(.no-image) .post-card-image-link {
@@ -740,7 +760,6 @@ The first (most recent) post in the list is styled to be bigger than the others 
     .home-template .post-feed .post-card:nth-child(6n+1):not(.no-image) .post-card-image {
         position: absolute;
         width: 100%;
-        height: 100%;
     }
 
     .home-template .post-feed .post-card:nth-child(6n+1):not(.no-image) .post-card-content {
@@ -770,18 +789,6 @@ The first (most recent) post in the list is styled to be bigger than the others 
 }
 
 
-/* Adjust some margins for smaller screens */
-@media (max-width: 600px) {
-    .post-card-image {
-        height: 300px;
-    }
-    .post-feed {
-        padding-top: 40px;
-    }
-    .post-card {
-        margin: 0 0 40px 0;
-    }
-}
 
 
 
@@ -2509,4 +2516,3 @@ Usage (In Ghost editor):
 .github svg {
     width: 2rem;
 }
-
