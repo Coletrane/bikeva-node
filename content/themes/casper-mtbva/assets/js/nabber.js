@@ -50,6 +50,6 @@ $(function($) {
   }
 
   window.initPostNabbers = function() {
-    $("header").after(createNabber(0))
+    $($(".post-full-header")[0]).after(createNabber(0))
   }
 })
