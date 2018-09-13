@@ -30,7 +30,7 @@
       "secretAccessKey": "CrY9DCHDu1B/uNzmMxWWCTS0y3gpE51whcY3pxNy",
       "region": "us-east-1",
       "bucket": "mtbva-ghost",
-      "assetHost": "d67lpjl1ad6mv.cloudfront.net"
+      "assetHost": "http://d67lpjl1ad6mv.cloudfront.net"
     }
   },
   "mail": {
