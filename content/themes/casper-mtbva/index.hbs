@@ -23,9 +23,16 @@ into the {body} of the default.hbs template --}}
 <main id="site-main"
       class="site-main outer">
   <div class="post-feed">
-    {{#foreach posts}}
-      {{> "post-card"}}
-    {{/foreach}}
+    {{#get "posts" limit="all" filter="featured:true"}}
+      {{#foreach posts}}
+        {{>"post-card"}}
+      {{/foreach}}
+    {{/get}}
+    {{#get "posts" limit="all" filter="featured:false"}}
+      {{#foreach posts}}
+        {{>"post-card"}}
+      {{/foreach}}
+    {{/get}}
   </div>
 </main>
 {{#contentFor "scripts"}}

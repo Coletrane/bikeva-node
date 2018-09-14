@@ -107,7 +107,7 @@
       // maxPages is a global variable that is needed to determine
       // if we need to load more pages for the infinitescroll, or if
       // we reached the last page already.
-      var maxPages = parseInt('{{pagination.pages}}')
+      var maxPages = parseInt('{{pagination.pages}}') - 1
       </script>
       <script src="{{asset "js/infinitescroll.js"}}"></script>
     {{/if}}
