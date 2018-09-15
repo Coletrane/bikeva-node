@@ -1,5 +1,5 @@
 {
-  "url": "https://d2mi8s9wlfjy1p.cloudfront.net/",
+  "url": "https://mountainbikewestvirginia.com",
   "server": {
     "host": "localhost",
     "port": 2368
@@ -30,7 +30,8 @@
       "secretAccessKey": "CrY9DCHDu1B/uNzmMxWWCTS0y3gpE51whcY3pxNy",
       "region": "us-east-1",
       "bucket": "mtbva-ghost",
-      "assetHost": "http://d67lpjl1ad6mv.cloudfront.net"
+      "pathPrefix": "/content/images",
+      "assetHost": "https://d67lpjl1ad6mv.cloudfront.net"
     }
   },
   "mail": {
