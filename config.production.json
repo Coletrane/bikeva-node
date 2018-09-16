@@ -16,7 +16,7 @@
   "database": {
     "client": "mysql",
     "connection": {
-      "host": "mtbva.cnwz9zzm9pih.us-east-1.rds.amazonaws.com",
+      "host": "mtbva-ghost.cnwz9zzm9pih.us-east-1.rds.amazonaws.com",
       "port": 3306,
       "user": "cole",
       "password": "sK84life!ocrap123",
