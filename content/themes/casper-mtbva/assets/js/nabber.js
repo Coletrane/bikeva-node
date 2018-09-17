@@ -49,8 +49,4 @@ $(function($) {
       })
     window.testParallax()
   }
-
-  window.initPostNabbers = function() {
-    $($(".post-full-header")[0]).after(createNabber(0))
-  }
 })

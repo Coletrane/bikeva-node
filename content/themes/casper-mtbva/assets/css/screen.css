@@ -194,7 +194,6 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .mtbva-parallax {
-    background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -202,7 +201,6 @@ h1, h2, h3, h4, h5, h6 {
 
 .post-weather .mtbva-weather {
     margin-top: 80px;
-    margin-bottom: 20px;
     height: 90px;
 }
 
@@ -232,12 +230,6 @@ h1, h2, h3, h4, h5, h6 {
 
 .temp-icon img {
     width: 5rem;
-}
-
-@media (max-width: 600px) {
-    .mtbva-weather {
-        margin: 10px 0;
-    }
 }
 
 @media (max-width: 500px) {
@@ -497,7 +489,7 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
 }
 
 .post-card {
-    flex: 1 1 40vw;
+    flex: 1 1 400px;
     display: flex;
     flex-direction: column;
     overflow: hidden;
@@ -828,7 +820,7 @@ The first (most recent) post in the list is styled to be bigger than the others 
 }
 
 .post-header-content {
-    margin: 28% auto;
+    margin: 0 5px 20px 5px;
 }
 
 .post-full-meta {
@@ -847,7 +839,8 @@ The first (most recent) post in the list is styled to be bigger than the others 
 }
 
 .post-full-title {
-    margin: 0;
+    text-align: center;
+    margin: 10px 0;
     color: white;
     text-shadow: 3px 5px 0px rgb(0, 0, 0);
 }
@@ -888,26 +881,6 @@ The first (most recent) post in the list is styled to be bigger than the others 
     background: #fff;
     margin: 0 7vw;
     padding: 0 4rem 4rem;
-}
-
-@media (max-width: 800px) {
-    .post-full-content {
-        font-size: 1.9rem;
-        margin: 0 4vw;
-    }
-}
-@media (max-width: 600px) {
-    .post-full-content {
-        margin: 0;
-    }
-
-    .post-full-content img {
-        padding: 2vw 0;
-    }
-
-    .footnotes, .post-full-comments, .post-full-content blockquote, .post-full-content dl, .post-full-content h1, .post-full-content h2, .post-full-content h3, .post-full-content h4, .post-full-content h5, .post-full-content h6, .post-full-content ol, .post-full-content p, .post-full-content pre, .post-full-content ul {
-        padding: 2vw 2vw;
-    }
 }
 
 .post-full-content:before {
@@ -1825,7 +1798,7 @@ Usage (In Ghost editor):
 .floating-header-title {
     flex: 1;
     overflow: hidden;
-    margin: 0;
+    margin: 0 0 0 10px;
     color: white;
     font-size: 1.6rem;
     line-height: 1.3em;
@@ -1999,7 +1972,7 @@ Usage (In Ghost editor):
 }
 
 .post-full-content figcaption {
-    margin: 1.0em 0 0;
+    margin: 1em;
     font-size: 80%;
     line-height: 1.6em;
     text-align: center;
@@ -2024,6 +1997,30 @@ Usage (In Ghost editor):
 @media (max-width: 1040px) {
     .post-full-content .kg-width-full .kg-image {
         width: 100vw;
+    }
+    .post-full-content .kg-width-wide .kg-image {
+        width: 100vw;
+    }
+}
+
+@media (max-width: 800px) {
+    .post-full-content {
+        font-size: 1.9rem;
+        margin: 0 2vw;
+    }
+}
+@media (max-width: 600px) {
+    .post-full-content {
+        margin: 0;
+    }
+
+    .post-full-content figure {
+        margin: 0;
+    }
+
+    .footnotes, .post-full-comments, .post-full-content blockquote, .post-full-content dl, .post-full-content h1, .post-full-content h2, .post-full-content h3, .post-full-content h4, .post-full-content h5, .post-full-content h6, .post-full-content ol, .post-full-content p, .post-full-content pre, .post-full-content ul {
+        padding: 2vw 2vw;
+        width: 90vw;
     }
 }
 
