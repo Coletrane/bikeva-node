@@ -101,6 +101,7 @@
     var queryStrArr = window.location.search.split("=")
     if (queryStrArr.length === 2) {
       // url query param
+      $("#race-select").val(queryStrArr[1])
       getResults(queryStrArr[1])
     }
   })

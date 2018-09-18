@@ -6,6 +6,8 @@ into the {body} of the default.hbs template --}}
 <header class="site-header outer mtbva-parallax"
         style="background-image: url({{@blog.cover_image}});">
   <div class="inner">
+    {{> "weather"}}
+
     <div class="site-header-content">
       <h1 class="site-title">
         {{@blog.title}}
@@ -16,8 +18,6 @@ into the {body} of the default.hbs template --}}
     </div>
   </div>
 </header>
-
-{{> "weather"}}
 
 {{!-- The main content area --}}
 <main id="site-main"
@@ -32,6 +32,9 @@ into the {body} of the default.hbs template --}}
   <script>
   $(document).ready(function() {
     window.initHomeNabbers()
+    var postCards = $(".featured")
+    postCards.remove()
+    $(".post-feed").prepend(postCards)
   })
   </script>
 {{/contentFor}}

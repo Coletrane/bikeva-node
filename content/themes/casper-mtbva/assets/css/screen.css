@@ -119,7 +119,6 @@ h1, h2, h3, h4, h5, h6 {
     left: 0;
     z-index: 10;
     display: block;
-    background: rgba(0,0,0,0.18);
 }
 
 .site-header:after {
@@ -202,16 +201,19 @@ h1, h2, h3, h4, h5, h6 {
 .post-weather .mtbva-weather {
     margin-top: 80px;
     height: 90px;
+    background: transparent;
 }
 
 .mtbva-weather {
     text-align: center;
     justify-content: center;
-    height: 60px;
+    align-items: center;
+    background: var(--transparent-black);
+    height: 80px;
     display: flex;
     visibility: hidden;
     width: 100%;
-    margin-top: 40px;
+    margin-top: 60px;
 }
 
 .weather-city {
