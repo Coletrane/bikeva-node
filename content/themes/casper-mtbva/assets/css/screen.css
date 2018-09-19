@@ -217,7 +217,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .weather-city {
-    flex: 0 1 auto;
+    flex: 1 1 auto;
     padding: 0 4rem;
     color: white;
 }
@@ -2166,7 +2166,6 @@ Usage (In Ghost editor):
         padding: 0;
     }
 }
-
 
 /* 9. Error Template
 /* ---------------------------------------------------------- */
