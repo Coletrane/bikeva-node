@@ -30,7 +30,7 @@
           race
         ).then(function(res) {
           var bodyTable = $("<div class=\"body-table\" id=\"" + race + "-table\">")
-          res.classes.forEach(function(clazz) {
+          JSON.parse(res).classes.forEach(function(clazz) {
             // var tableContainer = $("<div class=\"" + clazz.name + "-table\">")
             var classTitle = $("<h2 class=\"results-class-name\">").text(clazz.name)
             bodyTable.append(classTitle)
@@ -79,7 +79,6 @@
       } else {
         // selected by user, GET and put in window cache
         getResults(race)
-        replaceResults(race)
       }
     }
 

@@ -18,8 +18,7 @@ router.get("/:name", (req, res) => {
         res.status(500).send("Duplicate race names")
       } else {
         console.log(`Results found! ${req.params.name}`)
-        res.setHeader("Content-Type", "application/json")
-        res.send(results[0].json)
+        res.json(results[0].json)
       }
     }
   )
