@@ -21,8 +21,7 @@ Vertical Timeline - by CodyHouse.co
 
 .cd-timeline__container {
   position: relative;
-  width: 90%;
-  max-width: 800px;
+  width: 100%;
   margin: 0 auto;
   padding: 2em 0;
 }
@@ -277,7 +276,7 @@ Vertical Timeline - by CodyHouse.co
     position: absolute;
     width: 100%;
     left: 122%;
-    top: 6px;
+    top: 2%;
     font-size: 1.6rem;
     color: white;
   }
@@ -285,7 +284,7 @@ Vertical Timeline - by CodyHouse.co
   .cd-timeline__date svg {
     color: white;
   }
-  
+
   .cd-timeline__block:nth-child(even) .cd-timeline__content {
     float: right;
   }

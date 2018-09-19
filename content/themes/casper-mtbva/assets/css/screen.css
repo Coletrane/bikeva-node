@@ -794,7 +794,6 @@ The first (most recent) post in the list is styled to be bigger than the others 
 
 
 
-
 /* 7. Single Post
 /* ---------------------------------------------------------- */
 
@@ -1601,6 +1600,12 @@ Usage (In Ghost editor):
 /* 7.4. Related posts
 /* ---------------------------------------------------------- */
 
+.read-next-title {
+    text-align: center;
+    color: white;
+    font-size: 2.5em;
+    margin: 0 0 4vw;
+}
 .read-next-feed {
     display: flex;
     flex-wrap: wrap;
