@@ -6,9 +6,7 @@ into the {body} of the default.hbs template --}}
 {{!-- Everything inside the #post tags pulls data from the post --}}
 {{#post}}
 
-  <div class="post-weather">
-    {{> "weather"}}
-  </div>
+  {{> "weather"}}
   <div class="post-header-content">
     <section class="post-full-meta">
       <time class="post-full-meta-date"
@@ -49,7 +47,6 @@ into the {body} of the default.hbs template --}}
         default byline. --}}
 
         {{> "author"}}
-
       </footer>
 
       {{!--
