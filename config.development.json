@@ -1,6 +1,6 @@
 {
   "server": {
-    "host": "localhost",
+    "host": "coletrane-3.local",
     "port": 2368
   },
   "auth": {

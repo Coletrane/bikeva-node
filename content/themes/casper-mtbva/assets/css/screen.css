@@ -107,7 +107,7 @@ h1, h2, h3, h4, h5, h6 {
     color: #fff;
     background: color(var(--darkgrey) l(-5%)) no-repeat center center;
     padding: 0;
-    height: 90vh;
+    height: 100vh;
 }
 
 .site-header:before {
@@ -169,26 +169,17 @@ h1, h2, h3, h4, h5, h6 {
     margin: 0;
     padding: 5px 0;
     font-size: 3rem;
-    font-weight: 400;
+    font-weight: 600;
     letter-spacing: 0.5px;
-    opacity: 0.8;
     text-shadow: 2px 2px 2px rgb(0, 0, 0);
 }
 
 @media (max-width: 500px) {
-    .site-header, .site-header-content {
-        height: 85vh;
-    }
     .site-title {
-        font-size: 3rem;
+        font-size: 5rem;
     }
     .site-description {
         font-size: 1.8rem;
-    }
-}
-@media (min-width: 1200px) {
-    .site-header, .site-header-content {
-        height: 100vh;
     }
 }
 
@@ -261,7 +252,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .mtbva-rwgps,
 .ride-with-gps-switcher iframe  {
-    width: 100%;
+    width: 90vw;
     height: 60vh;
 }
 
@@ -711,12 +702,6 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
     }
 }
 
-@media (max-width: 600px) {
-    .post-feed {
-        margin-top: 10px;
-    }
-}
-
 .reading-time {
     flex-shrink: 0;
     margin-left: 20px;
@@ -816,7 +801,7 @@ The first (most recent) post in the list is styled to be bigger than the others 
     margin: 0 auto;
     padding: 3vw 3vw 3vw;
     text-align: center;
-    height: 80vh;
+    height: 100vh;
 }
 @media (max-width: 500px) {
     .post-full-header {
@@ -1016,12 +1001,6 @@ Usage (In Ghost editor):
     margin-top: -3em;
     margin-bottom: 1.5em;
     text-align: center;
-}
-
-
-/* Override third party iframe styles */
-.post-full-content iframe {
-    margin: 0 auto !important;
 }
 
 .post-full-content blockquote {
@@ -2472,7 +2451,7 @@ Usage (In Ghost editor):
 }
 
 .sponsors-middle .sponsor {
-  width: 15rem;
+  width: 20vw;
 }
 
 @media (max-width: 600px) {
