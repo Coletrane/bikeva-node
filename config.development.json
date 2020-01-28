@@ -1,0 +1,48 @@
+{
+  "server": {
+    "host": "coletrane-3.local",
+    "port": 2368
+  },
+  "auth": {
+    "type": "password"
+  },
+  "paths": {
+    "contentPath": "content"
+  },
+  "privacy": {
+    "useRpcPing": false,
+    "useUpdateCheck": true
+  },
+  "useMinFiles": false,
+  "caching": {
+    "theme": {
+      "maxAge": 0
+    },
+    "admin": {
+      "maxAge": 0
+    }
+  },
+  "database": {
+    "client": "mysql",
+    "connection": {
+      "host": "localhost",
+      "port": 3306,
+      "user": "root",
+      "password": "sK84life",
+      "database": "mtbva"
+    }
+  },
+  "mail": {
+    "from": "signup@bikeva.com",
+    "transport": "SMTP",
+    "options": {
+      "host": "email-smtp.us-east-1.amazonaws.com",
+      "port": 465,
+      "service": "SES",
+      "auth": {
+        "user": "AKIAJEUPPSTBOYQYCJ6Q",
+        "pass": "AnOhPnY67mPtkaupksorSFXEV6azVbNRtmAMBbBDd6Z2"
+      }
+    }
+  }
+}
