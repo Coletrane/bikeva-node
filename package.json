@@ -10,7 +10,7 @@
     "pm2": "^3.1.2"
   },
   "devDependencies": {
-    "axios": "^0.18.0",
+    "axios": "^0.21.1",
     "prettier": "^1.14.2"
   },
   "scripts": {
